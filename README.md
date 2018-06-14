@@ -1,20 +1,16 @@
 # Twitter Sentiment Analysis
 
 The goal of this project is to learn how to pull twitter data, using the [tweepy](http://www.tweepy.org/) wrapper around the twitter API, and how to perform simple sentiment analysis using the [vaderSentiment](https://github.com/cjhutto/vaderSentiment) library.  The tweepy library hides all of the complexity necessary to handshake with Twitter's server for a secure connection. Finally, produce a web server running on AWS to display the most recent 100 tweets from a given user and the list of users followed by a given user. For example, in response to URL `/the_antlr_guy` (`http://localhost/the_antlr_guy` when tested), the web server responds with a tweet list color-coded by sentiment, using a red to green gradient:
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/parrt-tweets.png" title="pt" width=800 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/parrt-tweets.png" title="pt" width=800 />
 
 As another example URL `/realdonaldtrump` yields:
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/trump-tweets.png" title="ttweets" width=750 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/trump-tweets.png" title="ttweets" width=750 />
 
 I've also created a page responding to URLs, such as `/following/the_antlr_guy`, that displays the list of users followed by a given user:
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/parrt-follows.png" title="pf" width=350 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/parrt-follows.png" title="pf" width=350 />
 
 Or:
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/trump-follows.png" title="tf" width=350 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/trump-follows.png" title="tf" width=350 />
 
 Note that the users are sorted in reverse order by their number of followers. Just to be clear, `/following/the_antlr_guy` shows the list of users that Terrance follows sorted by how many followers those users have. Clearly, Guido has the most followers and so he is shown first in my list of people I follow.
 
@@ -25,8 +21,7 @@ Using the twitter API, you can pull tweets and user information and then display
 ### Authenticating with the twitter API server
 
 Twitter requires that you register as a user and then also create an "app" for which Twitter will give you authentication credentials. These credentials are needed for making requests to the API server. Start by logging in to [twitter app management](https://apps.twitter.com/) then click on "create new app". It should show you a dialog box such as the following, but of course you would fill in your own details:
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/twitter-app-creation.png" title="tac" width=500 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/twitter-app-creation.png" title="tac" width=500 />
 
 For the website, you can link to your LinkedIn account or something or even your github account. Leave the "callback URL" blank.
 
@@ -97,8 +92,7 @@ Here is what a single tweet's HTML looks like:
 Creating a server that has all the appropriate software can be tricky so I have recorded a sequence that works for me.
 
 The first thing is to launch a server with different software than the simple  Amazon linux we have been using in class. We need one that has, for example, `numpy` and friends so let's use an *image* (snapshot of a disk with a bunch of stuff installed) that already has machine learning software installed: Use "*Deep Learning AMI Amazon Linux Version 3.1_Sep2017 - ami-bde90fc7*":
-
-<img src="https://github.com/santhoshhari/Tweet-Sentiment-Analysis/blob/master/figures/aws-ami.png" title="aws" width=500 />
+<img src="https://raw.githubusercontent.com/santhoshhari/Tweet-Sentiment-Analysis/master/figures/aws-ami.png" title="aws" width=500 />
 
 Create a `t2.small` size computer (in Oregon; it's cheaper)!
 
