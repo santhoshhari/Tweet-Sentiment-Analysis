@@ -1,2 +1,6 @@
 theme: jekyll-theme-cayman
 title: Tweet Sentiment Analysis
+
+# Conversion
+markdown: kramdown
+mathjax: true
